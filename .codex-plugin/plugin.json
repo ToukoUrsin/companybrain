@@ -1,0 +1,120 @@
+{
+  "name": "companybrain",
+  "version": "1.0.0",
+  "description": "Your team's shared memory for ChatGPT, Codex and Claude Code: decisions, customers, people and promises, written and read by every teammate and AI tool.",
+  "author": {
+    "name": "Company Brain",
+    "email": "hello@companybrain.me",
+    "url": "https://companybrain.me"
+  },
+  "homepage": "https://companybrain.me",
+  "repository": "https://github.com/ToukoUrsin/companybrain",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "company knowledge",
+    "team",
+    "decisions",
+    "crm",
+    "context"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Company Brain",
+    "shortDescription": "Your team's shared memory",
+    "longDescription": "Company Brain is one shared memory for your whole team and every AI tool you use. Decisions and why they were made, customers, people, promises and meeting outcomes live in one place, and ChatGPT, Codex and Claude Code can all read and add to it.\n\nAsk \"why did we drop the Starter tier?\" and get the answer with its source. Start a task and your AI already knows what the company does, who the customers are and what was promised. When you decide something or agree on a next step, it's saved for every teammate and every tool, so nobody has to explain the company to an agent again.\n\nSign in with a passkey, invite teammates with a link, and see everything your team's brain knows at companybrain.me/brain.",
+    "developerName": "Company Brain",
+    "category": "Productivity",
+    "capabilities": [
+      "Brief any AI tool on your company in one call",
+      "Search decisions, customers, people and promises",
+      "Save decisions, commitments and meeting outcomes",
+      "Track open commitments and mark them done",
+      "Share one memory across your whole team"
+    ],
+    "websiteURL": "https://companybrain.me",
+    "supportURL": "https://companybrain.me/support",
+    "privacyPolicyURL": "https://companybrain.me/privacy",
+    "termsOfServiceURL": "https://companybrain.me/terms",
+    "defaultPrompt": [
+      "Brief me on our company before I start",
+      "What have we promised customers this month?",
+      "Why did we make our last pricing decision?"
+    ],
+    "brandColor": "#5B6CE0",
+    "brandColorDark": "#8EA2FF",
+    "composerIcon": "./assets/composer-icon.png",
+    "logo": "./assets/logo.png"
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Load the company context at the start of a task",
+              "prompt": "Brief me on our company before I write the investor update.",
+              "tools_triggered": [
+                "brief"
+              ],
+              "expected_behavior": "Calls brief and summarizes Northwind Robotics (autonomous pallet robots, $2,400/robot/month), open commitments to Coastal Foods and Bayline, and recent decisions."
+            },
+            {
+              "description": "Answer a 'why did we' question from saved decisions",
+              "prompt": "Why did we stop selling the Starter tier?",
+              "tools_triggered": [
+                "search",
+                "fetch"
+              ],
+              "expected_behavior": "Searches the brain and explains that installs cost ~$18k regardless of fleet size, Starter customers were unprofitable for 14 months and 3 of 4 pilots churned; new minimum is 4 robots. Cites the pricing review meeting of 22 Sept 2026."
+            },
+            {
+              "description": "List open promises with due dates",
+              "prompt": "What have we promised customers and when is each due?",
+              "tools_triggered": [
+                "brief"
+              ],
+              "expected_behavior": "Lists the Coastal Foods rain-stall firmware fix due 2026-10-20 (owner Dev) and the Bayline SLA credit schedule due 2026-10-09 (owner Maya)."
+            },
+            {
+              "description": "Save a new decision",
+              "prompt": "Remember that we decided today to price the v3 robot at $2,600 per month because of the new lidar. Source: pricing call.",
+              "tools_triggered": [
+                "remember"
+              ],
+              "expected_behavior": "Calls remember with kind=decision, a short title, the content including the reason, and source 'pricing call', then confirms it was saved."
+            },
+            {
+              "description": "Mark a commitment done",
+              "prompt": "We sent Bayline the SLA credit schedule today. Mark that promise as done.",
+              "tools_triggered": [
+                "search",
+                "update_memory"
+              ],
+              "expected_behavior": "Finds the Bayline SLA commitment and calls update_memory with status=done, then confirms."
+            }
+          ],
+          "negative": [
+            {
+              "description": "General knowledge question unrelated to the company",
+              "prompt": "What is the capital of Australia?"
+            },
+            {
+              "description": "Coding question with no company context",
+              "prompt": "Write a Python function that reverses a string."
+            },
+            {
+              "description": "Request about another product's data",
+              "prompt": "Show me my Google Calendar events for tomorrow."
+            }
+          ]
+        },
+        "demo_recording_url": "https://companybrain.me/"
+      },
+      "publication": {
+        "release_notes": "First release: brief, search, fetch, recent, remember, update_memory, forget and invite_teammate over a shared, passkey-secured company memory."
+      }
+    }
+  }
+}

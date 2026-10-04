@@ -1,0 +1,8 @@
+{
+  "name": "companybrain",
+  "owner": { "name": "Company Brain", "email": "hello@companybrain.me" },
+  "description": "Company Brain: your team's shared memory for every AI tool.",
+  "plugins": [
+    { "name": "companybrain", "source": "./", "description": "Your team's shared memory: decisions, customers, people and promises." }
+  ]
+}
