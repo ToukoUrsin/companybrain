@@ -36,6 +36,7 @@ Listing in the ChatGPT plugin directory is in review. Until then, turn on Develo
 | `search` / `fetch` | Find and read memories |
 | `recent` | What changed in the last N days |
 | `remember` | Save a decision, commitment, customer, person, fact, meeting or profile |
+| `remember_many` | Import up to 25 memories at once (notes, docs, transcripts, onboarding) |
 | `update_memory` / `forget` | Correct, complete or remove a memory |
 | `invite_teammate` | Link that adds a teammate to the same brain |
 

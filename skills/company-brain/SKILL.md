@@ -26,12 +26,14 @@ Call `remember` when any of these happen:
 - **fact** — a lasting learning (market, product, sales, technical).
 - **profile** — what the company is and does (replaces the old profile).
 
+To import notes, a document, a meeting transcript or onboarding answers, split them into one fact per memory and save them with a single `remember_many` call (up to 25 per call).
+
 Rules:
 
 - One fact per memory, in plain language a new teammate could follow.
 - Always fill `source` (meeting, Slack channel, email, document, "coding session in repo X").
 - Tag customers, people and projects by name.
-- Update instead of duplicating: use `update_memory`, or `remember` with `supersedes`. Mark commitments `done` when they are.
+- Update instead of duplicating: use `update_memory`, or `remember` with `supersedes`. Saving the same kind and title again updates the existing memory. Mark commitments `done` when they are.
 - Never save passwords, API keys or other secrets, or personal data that isn't needed for work.
 - In coding sessions, save product and architecture decisions and their reasons, not routine code changes.
 
