@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Your team's shared memory for ChatGPT, Codex and Claude Code: decisions, customers, people and promises, written and read by every teammate and AI tool.",
   "author": {
-    "name": "Company Brain",
+    "name": "Helios One Oy",
     "email": "hello@companybrain.me",
     "url": "https://companybrain.me"
   },
@@ -24,7 +24,7 @@
     "displayName": "Company Brain",
     "shortDescription": "Your team's shared memory",
     "longDescription": "Company Brain is one shared memory for your whole team and every AI tool you use. Decisions and why they were made, customers, people, promises and meeting outcomes live in one place, and ChatGPT, Codex and Claude Code can all read and add to it.\n\nAsk \"why did we drop the Starter tier?\" and get the answer with its source. Start a task and your AI already knows what the company does, who the customers are and what was promised. When you decide something or agree on a next step, it's saved for every teammate and every tool, so nobody has to explain the company to an agent again.\n\nSign in with a passkey, invite teammates with a link, and see everything your team's brain knows at companybrain.me/brain.",
-    "developerName": "Company Brain",
+    "developerName": "Helios One Oy",
     "category": "Productivity",
     "capabilities": [
       "Brief any AI tool on your company in one call",

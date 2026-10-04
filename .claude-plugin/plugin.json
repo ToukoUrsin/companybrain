@@ -3,9 +3,19 @@
   "displayName": "Company Brain",
   "version": "1.0.0",
   "description": "Your team's shared memory for ChatGPT, Codex and Claude Code: decisions, customers, people and promises, written and read by every teammate and AI tool.",
-  "author": { "name": "Company Brain", "email": "hello@companybrain.me", "url": "https://companybrain.me" },
+  "author": {
+    "name": "Helios One Oy",
+    "email": "hello@companybrain.me",
+    "url": "https://companybrain.me"
+  },
   "homepage": "https://companybrain.me",
   "repository": "https://github.com/ToukoUrsin/companybrain",
   "license": "MIT",
-  "keywords": ["memory", "company knowledge", "team", "decisions", "context"]
+  "keywords": [
+    "memory",
+    "company knowledge",
+    "team",
+    "decisions",
+    "context"
+  ]
 }
